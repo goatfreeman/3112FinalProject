@@ -1,5 +1,5 @@
 ﻿namespace _3112FinalProject {
-    partial class Form2 {
+    partial class crUser {
         /// <summary>
         /// Required designer variable.
         /// </summary>

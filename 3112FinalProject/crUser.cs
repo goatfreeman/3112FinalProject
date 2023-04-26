@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3112FinalProject {
-    public partial class Form2 : Form {
+    public partial class crUser : Form {
         SqlCommand cmd;
         SqlConnection cn;
         SqlDataReader dr;
-        public Form2() {
+        public crUser() {
             InitializeComponent();
         }
         private void Form2_Load(object sender, EventArgs e) {

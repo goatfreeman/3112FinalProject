@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3112FinalProject {
-    public partial class Form1 : Form {
+    public partial class Login : Form {
         SqlCommand cmd;
         SqlConnection cn;
         SqlDataReader dr;
-        public Form1() {
+        public Login() {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e) {
@@ -25,7 +25,7 @@ namespace _3112FinalProject {
 
         private void button1_Click(object sender, EventArgs e) {
             if (userName.Text == "admin" && password.Text == "admin") {
-                new Form3().Show();
+                new landPage().Show();
                 this.Hide();
             }
             else {
@@ -36,7 +36,7 @@ namespace _3112FinalProject {
             }
         }
         private void button2_Click(object sender, EventArgs e) {
-            new Form2().Show();
+            new crUser().Show();
             this.Hide();
         }
 
