@@ -1,5 +1,5 @@
 ﻿namespace _3112FinalProject {
-    partial class Form3 {
+    partial class landPage {
         /// <summary>
         /// Required designer variable.
         /// </summary>
