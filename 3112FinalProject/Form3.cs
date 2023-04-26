@@ -10,29 +10,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace _3112FinalProject {
-    public partial class Form2 : Form {
+    public partial class Form3 : Form {
         SqlCommand cmd;
         SqlConnection cn;
         SqlDataReader dr;
-        public Form2() {
+        public Form3() {
             InitializeComponent();
         }
-        private void Form2_Load(object sender, EventArgs e) {
+        private void Form3_Load(object sender, EventArgs e) {
             cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Matthew\Documents\Visual Studio 2022\Code\3112FinalProject\3112FinalProject\Database1.mdf;Integrated Security=True");
             cn.Open();
         }
 
-        private void label2_Click(object sender, EventArgs e) {
+        private void label1_Click(object sender, EventArgs e) {
 
         }
-
-        private void button2_Click(object sender, EventArgs e) {
-
-        }
-
-        private void back_Click(object sender, EventArgs e) {
-            this.Close();
-            //Form1.show();
-        } 
     }
 }
