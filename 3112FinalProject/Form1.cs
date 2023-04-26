@@ -33,5 +33,9 @@ namespace _3112FinalProject {
         private void checkLogin(object sender, EventArgs e) {
 
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+
+        }
     }
 }
