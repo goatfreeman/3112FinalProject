@@ -19,9 +19,10 @@ namespace _3112FinalProject {
             InitializeComponent();
         }
         private void Form1_Load(object sender, EventArgs e) {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=~\3112FinalProject\3112FinalProject\Database1.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True");
             cn.Open();
         }
+
         private void button1_Click(object sender, EventArgs e) {
             if (userName.Text == "admin" && password.Text == "admin") {
                 new Form3().Show();
