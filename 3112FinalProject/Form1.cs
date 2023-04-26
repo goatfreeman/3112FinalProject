@@ -13,5 +13,25 @@ namespace _3112FinalProject {
         public Form1() {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e) {
+            string user;
+            string pw;
+            user = userName.Text;
+            pw = password.Text;
+            label1.Text = user;
+            checkLogin(user,pw);
+        }
+
+        private void label1_Click(object sender, EventArgs e) {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e) {
+
+        }
+        private void checkLogin(object sender, EventArgs e) {
+
+        }
     }
 }
