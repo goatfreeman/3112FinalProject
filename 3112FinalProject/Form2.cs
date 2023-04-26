@@ -18,7 +18,7 @@ namespace _3112FinalProject {
             InitializeComponent();
         }
         private void Form2_Load(object sender, EventArgs e) {
-            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Matthew\Documents\Visual Studio 2022\Code\3112FinalProject\3112FinalProject\Database1.mdf;Integrated Security=True");
+            cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=~\3112FinalProject\3112FinalProject\Database1.mdf;Integrated Security=True");
             cn.Open();
         }
 
