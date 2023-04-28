@@ -32,7 +32,6 @@ namespace _3112FinalProject {
 
         private void back_Click(object sender, EventArgs e) {
             this.Close();
-            //Form1.show();
-        } 
+        }
     }
 }

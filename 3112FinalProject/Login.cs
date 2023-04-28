@@ -36,8 +36,12 @@ namespace _3112FinalProject {
             }
         }
         private void button2_Click(object sender, EventArgs e) {
-            new crUser().Show();
+
             this.Hide();
+            crUser form1 =new crUser();   
+            form1.ShowDialog();
+            form1 = null;
+            this.Show();
         }
 
         private void label1_Click(object sender, EventArgs e) {
