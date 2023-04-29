@@ -27,7 +27,31 @@ namespace _3112FinalProject {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-
+            if (username.Text != string.Empty || password.Text != string.Empty || passwordConfirm.Text != string.Empty) {
+                if(password.Text == passwordConfirm.Text) {
+                    cmd = new SqlCommand("select * from LoginTable where username='" + username.Text + "'", cn);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read()) {
+                        dr.Close();
+                        MessageBox.Show("Username Taken\nTry Login","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    else {
+                        dr.Close();
+                        cmd = new SqlCommand("insert into LoginTable (Id,username,password) values(NEWID(),@username,@password)", cn);
+                        cmd.Parameters.AddWithValue("username", username.Text);
+                        cmd.Parameters.AddWithValue("password", password.Text);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Account created.","Done",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                }
+                else {
+                    MessageBox.Show("Password and Password confirm mismatch\nPlease re-enter your password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else {
+                MessageBox.Show("Please fill in all required information","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            }
         }
 
         private void back_Click(object sender, EventArgs e) {
