@@ -23,9 +23,9 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.username = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.TextBox();
-            this.passwordConfirm = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.t = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.crUsername = new System.Windows.Forms.Label();
             this.pw = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -33,26 +33,26 @@
             this.createConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // username
+            // textBox1
             // 
-            this.username.Location = new System.Drawing.Point(335, 147);
-            this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(217, 20);
-            this.username.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(335, 147);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(217, 20);
+            this.textBox1.TabIndex = 0;
             // 
-            // password
+            // t
             // 
-            this.password.Location = new System.Drawing.Point(335, 194);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(217, 20);
-            this.password.TabIndex = 1;
+            this.t.Location = new System.Drawing.Point(335, 194);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(217, 20);
+            this.t.TabIndex = 1;
             // 
-            // passwordConfirm
+            // textBox2
             // 
-            this.passwordConfirm.Location = new System.Drawing.Point(335, 248);
-            this.passwordConfirm.Name = "passwordConfirm";
-            this.passwordConfirm.Size = new System.Drawing.Size(217, 20);
-            this.passwordConfirm.TabIndex = 2;
+            this.textBox2.Location = new System.Drawing.Point(335, 248);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(217, 20);
+            this.textBox2.TabIndex = 2;
             // 
             // crUsername
             // 
@@ -113,9 +113,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pw);
             this.Controls.Add(this.crUsername);
-            this.Controls.Add(this.passwordConfirm);
-            this.Controls.Add(this.password);
-            this.Controls.Add(this.username);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.t);
+            this.Controls.Add(this.textBox1);
             this.Name = "crUser";
             this.Text = "Registration";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -126,9 +126,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox username;
-        private System.Windows.Forms.TextBox password;
-        private System.Windows.Forms.TextBox passwordConfirm;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox t;
+        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label crUsername;
         private System.Windows.Forms.Label pw;
         private System.Windows.Forms.Label label3;

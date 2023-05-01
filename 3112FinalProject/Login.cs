@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace _3112FinalProject {
     public partial class Login : Form {
         SqlCommand cmd;
@@ -25,32 +24,23 @@ namespace _3112FinalProject {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            if (userName.Text != string.Empty || password.Text != string.Empty) {
-
-                cmd = new SqlCommand("select * from LoginTable where username='" + userName.Text + "' and password='" + password.Text + "'", cn);
-                dr = cmd.ExecuteReader();
-                if (dr.Read()) {
-                    dr.Close();
-                    this.Hide();
-                    landPage landpage1 = new landPage();
-                    landpage1.ShowDialog();
-                }
-                else {
-                    dr.Close();
-                    MessageBox.Show("No Account found or incorrect Username or Password ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
+            if (userName.Text == "admin" && password.Text == "admin") {
+                new landPage().Show();
+                this.Hide();
             }
             else {
-                MessageBox.Show("Please enter a username and password to login", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User not found or Passowrd incorrect\nPlease Try again!");
+                userName.Clear();
+                password.Clear();
+                userName.Focus();
             }
         }
         private void button2_Click(object sender, EventArgs e) {
 
             this.Hide();
-            crUser crUser1 =new crUser();   
-            crUser1.ShowDialog();
-            crUser1 = null;
+            crUser form1 =new crUser();   
+            form1.ShowDialog();
+            form1 = null;
             this.Show();
         }
 
@@ -63,8 +53,6 @@ namespace _3112FinalProject {
 
         }
 
-        private void userName_MaskInputRejected(object sender, MaskInputRejectedEventArgs e) {
-
-        }
+        
     }
 }

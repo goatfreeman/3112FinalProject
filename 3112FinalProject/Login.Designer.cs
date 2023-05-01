@@ -61,7 +61,6 @@
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(208, 20);
             this.userName.TabIndex = 1;
-            this.userName.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.userName_MaskInputRejected);
             // 
             // unLabel
             // 
@@ -92,7 +91,7 @@
             this.createAcc.UseVisualStyleBackColor = true;
             this.createAcc.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Login
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,7 +102,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.button1);
-            this.Name = "Login";
+            this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
