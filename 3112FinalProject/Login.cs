@@ -16,6 +16,8 @@ namespace _3112FinalProject {
         public Login() {
             InitializeComponent();
         }
+        public string user { get; set; }
+
         private void Form1_Load(object sender, EventArgs e) {
             
         }
@@ -25,7 +27,12 @@ namespace _3112FinalProject {
                 if (userLogin(userName.Text,password.Text)) {
                     this.Hide();
                     landPage landpage1 = new landPage();
+                    landpage1.user = userName.Text;
                     landpage1.ShowDialog();
+                    landpage1 = null;
+                    userName.Text = string.Empty;
+                    password.Text = string.Empty;
+                    this.Show();    
                 }
                 else {
                     MessageBox.Show("Username Incorrect or not found\nPlease Try again", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

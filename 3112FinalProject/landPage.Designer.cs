@@ -24,32 +24,33 @@
         /// </summary>
         private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.userPlate = new System.Windows.Forms.Label();
             this.library = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.favList = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.newFavList = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.listName = new System.Windows.Forms.TextBox();
             this.newEntry = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.refreshFav = new System.Windows.Forms.Button();
+            this.logout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // userPlate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.userPlate.AutoSize = true;
+            this.userPlate.Location = new System.Drawing.Point(11, 9);
+            this.userPlate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.userPlate.Name = "userPlate";
+            this.userPlate.Size = new System.Drawing.Size(52, 13);
+            this.userPlate.TabIndex = 0;
+            this.userPlate.Text = "Welcome";
+            this.userPlate.Click += new System.EventHandler(this.label1_Click);
             // 
             // library
             // 
@@ -60,13 +61,13 @@
             this.library.TabIndex = 1;
             this.library.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // listBox2
+            // favList
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(470, 64);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(121, 290);
-            this.listBox2.TabIndex = 2;
+            this.favList.FormattingEnabled = true;
+            this.favList.Location = new System.Drawing.Point(404, 64);
+            this.favList.Name = "favList";
+            this.favList.Size = new System.Drawing.Size(187, 290);
+            this.favList.TabIndex = 2;
             // 
             // listBox3
             // 
@@ -109,14 +110,15 @@
             this.button3.Text = "Remove from list";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // newFavList
             // 
-            this.button4.Location = new System.Drawing.Point(596, 143);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(131, 37);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Add new list";
-            this.button4.UseVisualStyleBackColor = true;
+            this.newFavList.Location = new System.Drawing.Point(596, 143);
+            this.newFavList.Name = "newFavList";
+            this.newFavList.Size = new System.Drawing.Size(131, 37);
+            this.newFavList.TabIndex = 10;
+            this.newFavList.Text = "Add new list";
+            this.newFavList.UseVisualStyleBackColor = true;
+            this.newFavList.Click += new System.EventHandler(this.newFavList_Click);
             // 
             // button5
             // 
@@ -126,13 +128,14 @@
             this.button5.TabIndex = 9;
             this.button5.Text = "Remove list";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox1
+            // listName
             // 
-            this.textBox1.Location = new System.Drawing.Point(597, 117);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(130, 20);
-            this.textBox1.TabIndex = 11;
+            this.listName.Location = new System.Drawing.Point(597, 117);
+            this.listName.Name = "listName";
+            this.listName.Size = new System.Drawing.Size(130, 20);
+            this.listName.TabIndex = 11;
             // 
             // newEntry
             // 
@@ -154,33 +157,45 @@
             this.refresh.UseVisualStyleBackColor = true;
             this.refresh.Click += new System.EventHandler(this.refresh_Click);
             // 
-            // button2
+            // refreshFav
             // 
-            this.button2.Location = new System.Drawing.Point(597, 186);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 48);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Refresh List";
-            this.button2.UseVisualStyleBackColor = true;
+            this.refreshFav.Location = new System.Drawing.Point(597, 186);
+            this.refreshFav.Name = "refreshFav";
+            this.refreshFav.Size = new System.Drawing.Size(131, 48);
+            this.refreshFav.TabIndex = 14;
+            this.refreshFav.Text = "Refresh List";
+            this.refreshFav.UseVisualStyleBackColor = true;
+            this.refreshFav.Click += new System.EventHandler(this.refreshFav_Click);
+            // 
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(994, 4);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(75, 23);
+            this.logout.TabIndex = 15;
+            this.logout.Text = "Logout";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // landPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 434);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.logout);
+            this.Controls.Add(this.refreshFav);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.newEntry);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.listName);
+            this.Controls.Add(this.newFavList);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.favList);
             this.Controls.Add(this.library);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.userPlate);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "landPage";
             this.Text = "Form3";
@@ -192,19 +207,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label userPlate;
         private System.Windows.Forms.ListBox library;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox favList;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button newFavList;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox listName;
         private System.Windows.Forms.Button newEntry;
         private System.Windows.Forms.Button refresh;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button refreshFav;
+        private System.Windows.Forms.Button logout;
     }
 }
