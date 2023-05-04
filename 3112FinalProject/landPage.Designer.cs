@@ -27,13 +27,13 @@
             this.userPlate = new System.Windows.Forms.Label();
             this.library = new System.Windows.Forms.ListBox();
             this.favList = new System.Windows.Forms.ListBox();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.favListItems = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.newFavList = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.removeList = new System.Windows.Forms.Button();
             this.listName = new System.Windows.Forms.TextBox();
             this.newEntry = new System.Windows.Forms.Button();
             this.refresh = new System.Windows.Forms.Button();
@@ -68,14 +68,15 @@
             this.favList.Name = "favList";
             this.favList.Size = new System.Drawing.Size(187, 290);
             this.favList.TabIndex = 2;
+            this.favList.SelectedIndexChanged += new System.EventHandler(this.favList_SelectedIndexChanged);
             // 
-            // listBox3
+            // favListItems
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(749, 64);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(120, 290);
-            this.listBox3.TabIndex = 3;
+            this.favListItems.FormattingEnabled = true;
+            this.favListItems.Location = new System.Drawing.Point(749, 64);
+            this.favListItems.Name = "favListItems";
+            this.favListItems.Size = new System.Drawing.Size(239, 290);
+            this.favListItems.TabIndex = 3;
             // 
             // contextMenuStrip1
             // 
@@ -103,12 +104,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(875, 168);
+            this.button3.Location = new System.Drawing.Point(994, 168);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 37);
             this.button3.TabIndex = 8;
             this.button3.Text = "Remove from list";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // newFavList
             // 
@@ -120,15 +122,15 @@
             this.newFavList.UseVisualStyleBackColor = true;
             this.newFavList.Click += new System.EventHandler(this.newFavList_Click);
             // 
-            // button5
+            // removeList
             // 
-            this.button5.Location = new System.Drawing.Point(596, 240);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(131, 37);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Remove list";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.removeList.Location = new System.Drawing.Point(596, 240);
+            this.removeList.Name = "removeList";
+            this.removeList.Size = new System.Drawing.Size(131, 37);
+            this.removeList.TabIndex = 9;
+            this.removeList.Text = "Remove list";
+            this.removeList.UseVisualStyleBackColor = true;
+            this.removeList.Click += new System.EventHandler(this.button5_Click);
             // 
             // listName
             // 
@@ -188,11 +190,11 @@
             this.Controls.Add(this.newEntry);
             this.Controls.Add(this.listName);
             this.Controls.Add(this.newFavList);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.removeList);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox3);
+            this.Controls.Add(this.favListItems);
             this.Controls.Add(this.favList);
             this.Controls.Add(this.library);
             this.Controls.Add(this.userPlate);
@@ -210,13 +212,13 @@
         private System.Windows.Forms.Label userPlate;
         private System.Windows.Forms.ListBox library;
         private System.Windows.Forms.ListBox favList;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.ListBox favListItems;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button newFavList;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button removeList;
         private System.Windows.Forms.TextBox listName;
         private System.Windows.Forms.Button newEntry;
         private System.Windows.Forms.Button refresh;
