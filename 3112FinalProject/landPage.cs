@@ -112,8 +112,8 @@ namespace _3112FinalProject {
 
         private void readUserFavlist(string userFavList, ListBox favList) {
             if (!File.Exists(userFavList)) {
-                File.Create(userFavList).Close();
-                //StreamWriter sw1 = File.CreateText(userFavList);
+                StreamWriter sw1 = File.CreateText(userFavList);
+                sw1.Close();
                 MessageBox.Show("Favorite List database not found\nPerforming First run Operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
