@@ -112,8 +112,10 @@ namespace _3112FinalProject {
 
         private void readUserFavlist(string userFavList, ListBox favList) {
             if (!File.Exists(userFavList)) {
-                StreamWriter sw1 = File.CreateText(userFavList);
+                File.Create(userFavList).Close();
+                //StreamWriter sw1 = File.CreateText(userFavList);
                 MessageBox.Show("Favorite List database not found\nPerforming First run Operation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
             else {
                 favList.Items.Clear();
@@ -230,7 +232,6 @@ namespace _3112FinalProject {
             string userFavList = user + "Favlist.txt";
             bool listNameUsed = false;
             if (listName != string.Empty) {
-                //string
                 string[] favEntry = File.ReadAllLines(userFavList);
                 foreach (string line in favEntry) {
                     string[] values = line.Split(':');
@@ -256,6 +257,9 @@ namespace _3112FinalProject {
         }
         private void readFavlist(string userFavList ,string userSelectedFavList, ListBox favListItems) {
             favListItems.Items.Clear();
+            if (!File.Exists(userFavList)) {
+                File.Create(userFavList).Close();
+            }
             string[] favEntry = File.ReadAllLines(userFavList);
             if (favEntry.Length == 0) {
                 favListItems.Items.Add("No Entries");
