@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
+using System.Runtime.Remoting.Messaging;
 
 namespace _3112FinalProject {
     public partial class crUser : Form {
@@ -25,11 +25,14 @@ namespace _3112FinalProject {
         private void label2_Click(object sender, EventArgs e) {
 
         }
-
+        Boolean created = false;
         private void button2_Click(object sender, EventArgs e) {
             if (username.Text != string.Empty || password.Text != string.Empty || passwordConfirm.Text != string.Empty) {
                 if(password.Text == passwordConfirm.Text) {
                     createUser(username.Text,password.Text);
+                    if (created == true) {
+                        this.Close();
+                    }
                 }
                 else {
                     MessageBox.Show("Password and Password confirm mismatch\nPlease re-enter your password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -66,6 +69,8 @@ namespace _3112FinalProject {
             using (StreamWriter sw1 = new StreamWriter(passDatabase,true)) {
                 sw1.WriteLine($"{username},{password}");
                 MessageBox.Show("Account has been created", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    created = true;
+                    sw1.Close();
             }
         }
             else {
